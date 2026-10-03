@@ -1,0 +1,42 @@
+model:
+  d_model: 256
+  num_heads: 4
+  encoder_layers: 6
+  decoder_layers: 1
+  ffn_dim: 2048
+  dropout: 0.1
+  inner_dim: 64
+  backbone_dims: [96, 192, 384]
+  backbone_depths: [2, 2, 6]
+  window_size: 7
+  token_grid_template: [12, 12]
+  token_grid_search: [20, 20]
+  template_size: 180
+  search_size: 320
+  template_work_size: 192
+  search_work_size: 320
+  score_hidden: 256
+
+train:
+  epochs: 500
+  batch_size: 8
+  num_workers: 4
+  lr_backbone: 0.00001
+  lr_main: 0.0001
+  weight_decay: 0.0001
+  lr_drop_epoch: 400
+  lr_drop_gamma: 0.1
+  lambda_iou: 2.0
+  lambda_l1: 5.0
+  grad_clip: 1.0
+  amp: true
+  seed: 42
+
+tracking:
+  template_area_scale: 22.0
+  search_area_scale: 52.0
+  update_threshold: 0.65
+  update_interval: 10
+
+runtime:
+  device: cuda
