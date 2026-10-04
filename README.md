@@ -58,7 +58,6 @@ NexaTrack/
 ├── NOTICE.md
 ├── LICENSE
 ├── pyproject.toml
-├── requirements.txt
 ├── configs/
 │   ├── nexatrack.yaml
 │   └── nexatrack_lite.yaml
@@ -108,7 +107,6 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate
 # Linux/macOS: source .venv/bin/activate
 pip install -U pip
-pip install -r requirements.txt
 pip install -e .
 ```
 
